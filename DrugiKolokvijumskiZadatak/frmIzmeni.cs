@@ -59,7 +59,7 @@ namespace DrugiKolokvijumskiZadatak
             cmbShipper.DataSource = shipperBL.GetShippers();
             cmbShipper.DisplayMember = "CompanyName";
             cmbShipper.ValueMember = "ShipperID";
-
+            cmbShipper.SelectedValue = orderDTO.ShipVia;
 
             cmbCustomer.DataSource = customerBL.GetCustomers();
             cmbCustomer.DisplayMember = "CompanyName";
@@ -70,6 +70,7 @@ namespace DrugiKolokvijumskiZadatak
             cmbProduct.DisplayMember = "ProductName";
             cmbProduct.ValueMember = "ProductID";
             cmbProduct.SelectedIndex = -1;
+            cmbProduct.SelectedValue = detailsDTO.ProductID;
 
             lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
@@ -80,20 +81,48 @@ namespace DrugiKolokvijumskiZadatak
         {
             OrderBL orderBl = new OrderBL();
 
+            //try
+            //{
+            //    orderDTO.CustomerID = cmbCustomer.SelectedValue.ToString();
+            //    orderDTO.EmployeeID = int.Parse(cmbEmployee.SelectedValue.ToString());
+            //    orderDTO.ShipVia = int.Parse(cmbShipper.SelectedValue.ToString());
+            //    detailsDTO.ProductID = int.Parse(cmbProduct.SelectedValue.ToString());
+            //    orderBl.Save(orderDTO);
+
+            //    dataGrid.Refresh();
+            //    RenderTable();
+
+            //    MessageBox.Show("Porudzbina je uspesno azurirana!");
+            //}
+            //catch (Exception err)
+            //{
+            //    MessageBox.Show("Greska: \r\n\r\n" + err.Message);
+            //}
+
             try
             {
                 orderDTO.CustomerID = cmbCustomer.SelectedValue.ToString();
                 orderDTO.EmployeeID = int.Parse(cmbEmployee.SelectedValue.ToString());
-                orderBl.Save(orderDTO);
+                orderDTO.ShipVia = int.Parse(cmbShipper.SelectedValue.ToString());
 
-                dataGrid.Refresh();
+                // Proverite da li su svi potrebni podaci popunjeni
+                if (string.IsNullOrEmpty(orderDTO.CustomerID) || orderDTO.EmployeeID == 0 || orderDTO.ShipVia == 0)
+                {
+                    MessageBox.Show("Molimo popunite sve potrebne podatke!");
+                    return;
+                }
+
+                // Sačuvajte promene u narudžbini
+                orderBL.Save(orderDTO);
+
+                // Osvežite DataGridView sa novim podacima
                 RenderTable();
 
-                MessageBox.Show("Porudzbina je uspesno azurirana!");
+                MessageBox.Show("Narudžbina je uspešno ažurirana!");
             }
             catch (Exception err)
             {
-                MessageBox.Show("Greska: \r\n\r\n" + err.Message);
+                MessageBox.Show("Došlo je do greške prilikom ažuriranja narudžbine: \r\n\r\n" + err.Message);
             }
         }
 
@@ -117,37 +146,76 @@ namespace DrugiKolokvijumskiZadatak
 
         private void btnUpdateItem_Click(object sender, EventArgs e)
         {
-            var selectedRow = dataGrid.SelectedRows[0];
+            //var selectedRow = dataGrid.SelectedRows[0];
 
-            var productId = selectedRow.Cells["ProductID"].Value.ToString();
-            var quantity = selectedRow.Cells["Quantity"].Value.ToString();
-            var unitPrice = selectedRow.Cells["UnitPrice"].Value.ToString();
-            var discount = selectedRow.Cells["Discount"].Value.ToString();
+            //var productId = selectedRow.Cells["ProductID"].Value.ToString();
+            //var quantity = selectedRow.Cells["Quantity"].Value.ToString();
+            //var unitPrice = selectedRow.Cells["UnitPrice"].Value.ToString();
+            //var discount = selectedRow.Cells["Discount"].Value.ToString();
 
-            if (string.IsNullOrEmpty(productId) || string.IsNullOrEmpty(quantity) || string.IsNullOrEmpty(unitPrice) || string.IsNullOrEmpty(discount))
+            //if (string.IsNullOrEmpty(productId) || string.IsNullOrEmpty(quantity) || string.IsNullOrEmpty(unitPrice) || string.IsNullOrEmpty(discount))
+            //{
+            //    MessageBox.Show("Sva polja su obavezna!");
+            //    return;
+            //}
+            //OrderDetailsBL orderDetailsBl = new OrderDetailsBL();
+
+            //try
+            //{
+            //    detailsDTO.ProductID = int.Parse(cmbProduct.SelectedValue.ToString());
+            //    detailsDTO.Quantity = short.Parse(txtQuantity.Text);
+            //    detailsDTO.UnitPrice = decimal.Parse(txtPrice.Text);
+            //    detailsDTO.Discount = float.Parse(txtDiscount.Text);
+            //    orderDetailsBl.Save(detailsDTO);
+
+
+            //    MessageBox.Show("Stavka je uspesno azurirana!");
+            //    dataGrid.Refresh();
+            //    RenderTable();
+
+            //}
+            //catch (Exception err)
+            //{
+            //    MessageBox.Show("Greska: \r\n\r\n" + err.Message);
+            //}
+
+            if (dataGrid.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Sva polja su obavezna!");
-                return;
+                var selectedRow = dataGrid.SelectedRows[0];
+
+                var productId = selectedRow.Cells["ProductID"].Value.ToString();
+                var quantity = selectedRow.Cells["Quantity"].Value.ToString();
+                var unitPrice = selectedRow.Cells["UnitPrice"].Value.ToString();
+                var discount = selectedRow.Cells["Discount"].Value.ToString();
+
+                if (string.IsNullOrEmpty(productId) || string.IsNullOrEmpty(quantity) || string.IsNullOrEmpty(unitPrice) || string.IsNullOrEmpty(discount))
+                {
+                    MessageBox.Show("Sva polja su obavezna!");
+                    return;
+                }
+
+                try
+                {
+                    detailsDTO.OrderID = orderID;
+                    detailsDTO.ProductID = int.Parse(cmbProduct.SelectedValue.ToString());
+                    detailsDTO.Quantity = short.Parse(txtQuantity.Text);
+                    detailsDTO.UnitPrice = decimal.Parse(txtPrice.Text);
+                    detailsDTO.Discount = float.Parse(txtDiscount.Text);
+
+                    orderDetailsBL.Save(detailsDTO);
+
+                    MessageBox.Show("Stavka je uspešno ažurirana!");
+                    dataGrid.Refresh();
+                    RenderTable();
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("Greška: \r\n\r\n" + err.Message);
+                }
             }
-            OrderDetailsBL orderDetailsBl = new OrderDetailsBL();
-
-            try
+            else
             {
-                detailsDTO.ProductID = int.Parse(cmbProduct.SelectedValue.ToString());
-                detailsDTO.Quantity = short.Parse(txtQuantity.Text);
-                detailsDTO.UnitPrice = decimal.Parse(txtPrice.Text);
-                detailsDTO.Discount = float.Parse(txtDiscount.Text);
-                orderDetailsBl.Save(detailsDTO);
-
-
-                MessageBox.Show("Stavka je uspesno azurirana!");
-                dataGrid.Refresh();
-                RenderTable();
-
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Greska: \r\n\r\n" + err.Message);
+                MessageBox.Show("Nijedna stavka nije izabrana!");
             }
         }
 

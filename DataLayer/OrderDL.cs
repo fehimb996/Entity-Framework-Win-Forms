@@ -66,6 +66,7 @@ namespace DataLayer
                 order.ShipName = oDTO.ShipName;
                 order.EmployeeID = oDTO.EmployeeID;
                 order.OrderDate = oDTO.OrderDate;
+                order.ShipVia = oDTO.ShipVia;
 
                 _context.GetContext().SaveChanges();
             }
