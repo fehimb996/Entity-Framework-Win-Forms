@@ -41,6 +41,22 @@ namespace DataLayer
             }
         }
 
+        public void UpdateProduct(int orderID, int oldProductID, int newProductID)
+        {
+            var orderDetail = _context.GetContext().Order_Details.Find(orderID, oldProductID);
+            if (orderDetail != null)
+            {
+                // First, remove the existing order detail with the old product ID
+                _context.GetContext().Order_Details.Remove(orderDetail);
+                _context.GetContext().SaveChanges();
+
+                // Then, create a new order detail with the new product ID
+                orderDetail.ProductID = newProductID;
+                _context.GetContext().Order_Details.Add(orderDetail);
+                _context.GetContext().SaveChanges();
+            }
+        }
+
         public void Delete(int orderID)
         {
             {

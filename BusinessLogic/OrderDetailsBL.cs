@@ -27,6 +27,11 @@ namespace BusinessLogic
             _orderDetailsDL.Save(orderDetailsDTO);
         }
 
+        public void UpdateProduct(int orderID, int oldProductID, int newProductID)
+        {
+            _orderDetailsDL.UpdateProduct(orderID, oldProductID, newProductID);
+        }
+
         public void Delete(int orderID)
         {
             _orderDetailsDL.Delete(orderID);
