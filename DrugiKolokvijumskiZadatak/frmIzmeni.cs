@@ -85,6 +85,8 @@ namespace DrugiKolokvijumskiZadatak
                 orderDTO.EmployeeID = int.Parse(cmbEmployee.SelectedValue.ToString());
                 orderBl.Save(orderDTO);
 
+                dataGrid.Refresh();
+                RenderTable();
 
                 MessageBox.Show("Porudzbina je uspesno azurirana!");
             }
