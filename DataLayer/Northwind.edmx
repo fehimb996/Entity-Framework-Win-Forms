@@ -1397,6 +1397,11 @@ warning 6002: The table/view 'Northwind.dbo.Summary of Sales by Year' does not h
             <Parameter Name="CustomerID" Mode="In" Type="String" />
             <Parameter Name="ProductID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="spSearchOrders3" ReturnType="Collection(NorthwindModel.spSearchOrders3_Result)">
+            <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+            <Parameter Name="CustomerID" Mode="In" Type="String" />
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="CustOrderHist_Result">
           <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
@@ -1475,6 +1480,25 @@ warning 6002: The table/view 'Northwind.dbo.Summary of Sales by Year' does not h
           <Property Type="Int32" Name="EmployeeID" Nullable="true" />
           <Property Type="String" Name="Customer" Nullable="false" MaxLength="40" />
           <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
+          <Property Type="Decimal" Name="TotalPrice" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="spSearchOrders3_Result">
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="String" Name="CustomerID" Nullable="true" MaxLength="5" />
+          <Property Type="Int32" Name="EmployeeID" Nullable="true" />
+          <Property Type="DateTime" Name="OrderDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="RequiredDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ShippedDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ShipVia" Nullable="true" />
+          <Property Type="Decimal" Name="Freight" Nullable="true" Precision="19" />
+          <Property Type="String" Name="ShipName" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="ShipAddress" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="ShipCity" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="ShipRegion" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="ShipPostalCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ShipCountry" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Customer" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="ContactName" Nullable="true" MaxLength="30" />
           <Property Type="Decimal" Name="TotalPrice" Nullable="true" Precision="19" />
         </ComplexType>
       </Schema>
@@ -1924,14 +1948,25 @@ warning 6002: The table/view 'Northwind.dbo.Summary of Sales by Year' does not h
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spSearchOrders2" FunctionName="NorthwindModel.Store.spSearchOrders">
+          <FunctionImportMapping FunctionImportName="spSearchOrders3" FunctionName="NorthwindModel.Store.spSearchOrders">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="NorthwindModel.spSearchOrders2_Result">
+              <ComplexTypeMapping TypeName="NorthwindModel.spSearchOrders3_Result">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+                <ScalarProperty Name="Freight" ColumnName="Freight" />
+                <ScalarProperty Name="ShipName" ColumnName="ShipName" />
+                <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
+                <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
+                <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
+                <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
+                <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
                 <ScalarProperty Name="Customer" ColumnName="Customer" />
-                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
                 <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
               </ComplexTypeMapping>
             </ResultMapping>

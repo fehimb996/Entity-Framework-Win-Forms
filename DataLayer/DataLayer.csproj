@@ -171,6 +171,9 @@
     <Compile Include="spSearchOrders2_Result.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
+    <Compile Include="spSearchOrders3_Result.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
     <Compile Include="spSearchOrders_Result.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>

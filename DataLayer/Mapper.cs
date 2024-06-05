@@ -170,12 +170,23 @@ namespace DataLayer
             return oDTP;
         }
 
-        public static OrderDTO MapToDTO(spSearchOrders2_Result result)
+        public static OrderDTO MapToDTO(spSearchOrders3_Result result)
         {
             OrderDTO orderDTO = new OrderDTO();
             orderDTO.OrderID = result.OrderID;
             orderDTO.CustomerID = result.CustomerID;
             orderDTO.EmployeeID = result.EmployeeID;
+            orderDTO.OrderDate = result.OrderDate;
+            orderDTO.RequiredDate = result.RequiredDate;
+            orderDTO.ShippedDate = result.ShippedDate;
+            orderDTO.ShipVia = result.ShipVia;
+            orderDTO.Freight = result.Freight;
+            orderDTO.ShipName = result.ShipName;
+            orderDTO.ShipAddress = result.ShipAddress;
+            orderDTO.ShipCity = result.ShipCity;
+            orderDTO.ShipRegion = result.ShipRegion;
+            orderDTO.ShipPostalCode = result.ShipPostalCode;
+            orderDTO.ShipCountry = result.ShipCountry;
 
             return orderDTO;
         }
@@ -184,7 +195,7 @@ namespace DataLayer
 
         #region Lists
 
-        public static List<OrderDTO> convertToList(List<spSearchOrders2_Result> results)
+        public static List<OrderDTO> convertToList(List<spSearchOrders3_Result> results)
         {
             List<OrderDTO> orderDTOs = new List<OrderDTO>();
             foreach (var result in results)
