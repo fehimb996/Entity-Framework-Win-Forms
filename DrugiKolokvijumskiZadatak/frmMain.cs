@@ -47,21 +47,6 @@ namespace DrugiKolokvijumskiZadatak
             frmNovaPorudzbina.Show();
         }
 
-        private void btnPregled_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                int selectedOrderID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["OrderID"].Value);
-
-                frmPregled frm = new frmPregled(selectedOrderID);
-                frm.Show();
-            }
-            else
-            {
-                btnPregled.Enabled = false;
-            }
-        }
-
         private void SearchOrders()
         {
             int? employeeID = null;
@@ -134,6 +119,17 @@ namespace DrugiKolokvijumskiZadatak
                 int selectedOrderID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
 
                 frmPregled frm = new frmPregled(selectedOrderID);
+                frm.Show();
+            }
+        }
+
+        private void btnIzmeni_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedOrderID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+
+                frmIzmeni frm = new frmIzmeni(selectedOrderID);
                 frm.Show();
             }
         }
