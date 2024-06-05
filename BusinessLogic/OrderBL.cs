@@ -27,6 +27,11 @@ namespace BusinessLogic
             return _orderDL.GetAll();
         }
 
+        public List<OrderDTO> SearchOrders(int? employeeID, string customerID, int? productID)
+        {
+            return _orderDL.SearchOrders(employeeID, customerID, productID);
+        }
+
         public int Insert(OrderDTO oDTO)
         {
             return _orderDL.Insert(oDTO);

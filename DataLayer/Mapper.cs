@@ -170,9 +170,29 @@ namespace DataLayer
             return oDTP;
         }
 
+        public static OrderDTO MapToDTO(spSearchOrders2_Result result)
+        {
+            OrderDTO orderDTO = new OrderDTO();
+            orderDTO.OrderID = result.OrderID;
+            orderDTO.CustomerID = result.CustomerID;
+            orderDTO.EmployeeID = result.EmployeeID;
+
+            return orderDTO;
+        }
+
         #endregion
 
         #region Lists
+
+        public static List<OrderDTO> convertToList(List<spSearchOrders2_Result> results)
+        {
+            List<OrderDTO> orderDTOs = new List<OrderDTO>();
+            foreach (var result in results)
+            {
+                orderDTOs.Add(MapToDTO(result));
+            }
+            return orderDTOs;
+        }
 
         public static List<OrderDTO> convertToList(List<Order> oList)
         {

@@ -33,6 +33,12 @@ namespace DataLayer
             return Mapper.convertToList(orders);
         }
 
+        public List<OrderDTO> SearchOrders(int? employeeID, string customerID, int? productID)
+        {
+            var results = _context.GetContext().spSearchOrders(employeeID, customerID, productID).ToList();
+            return Mapper.convertToList(results);
+        }
+
         public int Insert(OrderDTO oDTO)
         {
             using (var context = new NorthwindEntities())

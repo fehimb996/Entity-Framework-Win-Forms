@@ -146,7 +146,41 @@ namespace DataLayer
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetOrders_Result>("GetOrders", customerIDParameter, employeeIDParameter, dateFromParameter, dateToParameter);
         }
     
-        public virtual ObjectResult<spSearchOrders_Result> spSearchOrders(Nullable<int> employeeID, string customerID, Nullable<int> productID)
+        //public virtual ObjectResult<spSearchOrders_Result> spSearchOrders(Nullable<int> employeeID, string customerID, Nullable<int> productID)
+        //{
+        //    var employeeIDParameter = employeeID.HasValue ?
+        //        new ObjectParameter("EmployeeID", employeeID) :
+        //        new ObjectParameter("EmployeeID", typeof(int));
+    
+        //    var customerIDParameter = customerID != null ?
+        //        new ObjectParameter("CustomerID", customerID) :
+        //        new ObjectParameter("CustomerID", typeof(string));
+    
+        //    var productIDParameter = productID.HasValue ?
+        //        new ObjectParameter("ProductID", productID) :
+        //        new ObjectParameter("ProductID", typeof(int));
+    
+        //    return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSearchOrders_Result>("spSearchOrders", employeeIDParameter, customerIDParameter, productIDParameter);
+        //}
+    
+        //public virtual ObjectResult<spSearchOrders1_Result> spSearchOrders1(Nullable<int> employeeID, string customerID, Nullable<int> productID)
+        //{
+        //    var employeeIDParameter = employeeID.HasValue ?
+        //        new ObjectParameter("EmployeeID", employeeID) :
+        //        new ObjectParameter("EmployeeID", typeof(int));
+    
+        //    var customerIDParameter = customerID != null ?
+        //        new ObjectParameter("CustomerID", customerID) :
+        //        new ObjectParameter("CustomerID", typeof(string));
+    
+        //    var productIDParameter = productID.HasValue ?
+        //        new ObjectParameter("ProductID", productID) :
+        //        new ObjectParameter("ProductID", typeof(int));
+    
+        //    return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSearchOrders1_Result>("spSearchOrders1", employeeIDParameter, customerIDParameter, productIDParameter);
+        //}
+    
+        public virtual ObjectResult<spSearchOrders2_Result> spSearchOrders(Nullable<int> employeeID, string customerID, Nullable<int> productID)
         {
             var employeeIDParameter = employeeID.HasValue ?
                 new ObjectParameter("EmployeeID", employeeID) :
@@ -160,24 +194,7 @@ namespace DataLayer
                 new ObjectParameter("ProductID", productID) :
                 new ObjectParameter("ProductID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSearchOrders_Result>("spSearchOrders", employeeIDParameter, customerIDParameter, productIDParameter);
-        }
-    
-        public virtual ObjectResult<spSearchOrders1_Result> spSearchOrders1(Nullable<int> employeeID, string customerID, Nullable<int> productID)
-        {
-            var employeeIDParameter = employeeID.HasValue ?
-                new ObjectParameter("EmployeeID", employeeID) :
-                new ObjectParameter("EmployeeID", typeof(int));
-    
-            var customerIDParameter = customerID != null ?
-                new ObjectParameter("CustomerID", customerID) :
-                new ObjectParameter("CustomerID", typeof(string));
-    
-            var productIDParameter = productID.HasValue ?
-                new ObjectParameter("ProductID", productID) :
-                new ObjectParameter("ProductID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSearchOrders1_Result>("spSearchOrders1", employeeIDParameter, customerIDParameter, productIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spSearchOrders2_Result>("spSearchOrders2", employeeIDParameter, customerIDParameter, productIDParameter);
         }
     }
 }

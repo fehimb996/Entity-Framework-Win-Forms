@@ -160,11 +160,15 @@
     <Compile Include="Sales_Totals_by_Amount.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
+    <Compile Include="SearchOrders_Result.cs" />
     <Compile Include="Shipper.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="ShipperDL.cs" />
     <Compile Include="spSearchOrders1_Result.cs">
+      <DependentUpon>Northwind.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spSearchOrders2_Result.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="spSearchOrders_Result.cs">

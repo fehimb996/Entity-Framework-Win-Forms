@@ -1392,6 +1392,11 @@ warning 6002: The table/view 'Northwind.dbo.Summary of Sales by Year' does not h
             <Parameter Name="CustomerID" Mode="In" Type="String" />
             <Parameter Name="ProductID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="spSearchOrders2" ReturnType="Collection(NorthwindModel.spSearchOrders2_Result)">
+            <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+            <Parameter Name="CustomerID" Mode="In" Type="String" />
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="CustOrderHist_Result">
           <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
@@ -1462,6 +1467,14 @@ warning 6002: The table/view 'Northwind.dbo.Summary of Sales by Year' does not h
           <Property Type="DateTime" Name="OrderDate" Nullable="true" Precision="23" />
           <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="40" />
           <Property Type="String" Name="Customer" Nullable="true" MaxLength="30" />
+          <Property Type="Decimal" Name="TotalPrice" Nullable="true" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="spSearchOrders2_Result">
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="String" Name="CustomerID" Nullable="true" MaxLength="5" />
+          <Property Type="Int32" Name="EmployeeID" Nullable="true" />
+          <Property Type="String" Name="Customer" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
           <Property Type="Decimal" Name="TotalPrice" Nullable="true" Precision="19" />
         </ComplexType>
       </Schema>
@@ -1911,13 +1924,14 @@ warning 6002: The table/view 'Northwind.dbo.Summary of Sales by Year' does not h
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spSearchOrders1" FunctionName="NorthwindModel.Store.spSearchOrders">
+          <FunctionImportMapping FunctionImportName="spSearchOrders2" FunctionName="NorthwindModel.Store.spSearchOrders">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="NorthwindModel.spSearchOrders1_Result">
+              <ComplexTypeMapping TypeName="NorthwindModel.spSearchOrders2_Result">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
               </ComplexTypeMapping>
             </ResultMapping>

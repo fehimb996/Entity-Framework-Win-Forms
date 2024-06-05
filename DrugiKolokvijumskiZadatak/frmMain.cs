@@ -37,6 +37,7 @@ namespace DrugiKolokvijumskiZadatak
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            LoadComboBoxes();
             LoadOrders();
         }
 
@@ -61,19 +62,61 @@ namespace DrugiKolokvijumskiZadatak
             }
         }
 
+        private void SearchOrders()
+        {
+            int? employeeID = null;
+            if (cmbEmployee.SelectedIndex != -1 && cmbEmployee.SelectedValue is int)
+            {
+                employeeID = (int)cmbEmployee.SelectedValue;
+            }
+
+            string customerID = null;
+            if (cmbCustomer.SelectedIndex != -1 && cmbCustomer.SelectedValue is string)
+            {
+                customerID = (string)cmbCustomer.SelectedValue;
+            }
+
+            int? productID = null;
+            if (cmbProduct.SelectedIndex != -1 && cmbProduct.SelectedValue is int)
+            {
+                productID = (int)cmbProduct.SelectedValue;
+            }
+
+            var orders = orderBL.SearchOrders(employeeID, customerID, productID);
+            dataGridView1.DataSource = orders;
+        }
+
+        private void LoadComboBoxes()
+        {
+            cmbEmployee.DataSource = employeeBL.GetEmployees();
+            cmbEmployee.DisplayMember = "FirstName";
+            cmbEmployee.ValueMember = "EmployeeID";
+            cmbEmployee.SelectedIndex = -1;
+
+            cmbCustomer.DataSource = customerBL.GetCustomers();
+            cmbCustomer.DisplayMember = "CompanyName";
+            cmbCustomer.ValueMember = "CustomerID";
+            cmbCustomer.SelectedIndex = -1;
+
+            cmbProduct.DataSource = productBL.GetProducts();
+            cmbProduct.DisplayMember = "ProductName";
+            cmbProduct.ValueMember = "ProductID";
+            cmbProduct.SelectedIndex = -1;
+        }
+
         private void cmbEmployee_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SearchOrders();
         }
 
         private void cmbCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SearchOrders();
         }
 
         private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SearchOrders();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -81,6 +124,7 @@ namespace DrugiKolokvijumskiZadatak
             cmbEmployee.SelectedIndex = -1;
             cmbCustomer.SelectedIndex = -1;
             cmbProduct.SelectedIndex = -1;
+            LoadOrders();
         }
     }
 }
