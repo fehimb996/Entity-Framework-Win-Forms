@@ -110,6 +110,7 @@ namespace DrugiKolokvijumskiZadatak
             cmbCustomer.SelectedIndex = -1;
             cmbProduct.SelectedIndex = -1;
             LoadOrders();
+            dataGridView1.Refresh();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

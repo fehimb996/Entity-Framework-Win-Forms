@@ -64,6 +64,7 @@ namespace DrugiKolokvijumskiZadatak
             cmbCustomer.DataSource = customerBL.GetCustomers();
             cmbCustomer.DisplayMember = "CompanyName";
             cmbCustomer.ValueMember = "CustomerID";
+            cmbCustomer.SelectedValue = orderDTO.CustomerID;
 
             cmbProduct.DataSource = productBL.GetProducts();
             cmbProduct.DisplayMember = "ProductName";
