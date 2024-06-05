@@ -14,9 +14,7 @@ namespace DrugiKolokvijumskiZadatak
 {
     public partial class frmPregled : Form
     {
-        int orderID;
         int orderDetailID;
-        OrderBL orderBL;
         OrderDetailsBL orderDetailsBL;
         ProductBL productBL;
 

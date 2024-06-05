@@ -126,5 +126,16 @@ namespace DrugiKolokvijumskiZadatak
             cmbProduct.SelectedIndex = -1;
             LoadOrders();
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedOrderID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+
+                frmPregled frm = new frmPregled(selectedOrderID);
+                frm.Show();
+            }
+        }
     }
 }
