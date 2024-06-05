@@ -25,6 +25,22 @@ namespace DataLayer
             }
         }
 
+        public void Save(OrderDetailsDTO oDTO)
+        {
+            var order = _context.GetContext().Order_Details.Find(oDTO.OrderID, oDTO.ProductID);
+            if (order != null)
+            {
+
+                order.OrderID = oDTO.OrderID;
+                order.ProductID = oDTO.ProductID;
+                order.UnitPrice = oDTO.UnitPrice;
+                order.Quantity = oDTO.Quantity;
+                order.Discount = oDTO.Discount;
+
+                _context.GetContext().SaveChanges();
+            }
+        }
+
         public void Delete(int orderID)
         {
             {
@@ -35,6 +51,21 @@ namespace DataLayer
                 _context.GetContext().Order_Details.RemoveRange(orderDetails);
                 _context.GetContext().SaveChanges();
             }
+        }
+
+        public OrderDetailsDTO GetSingleOrderDetail(int OrderId)
+        {
+            var orderDetails = _context.GetContext().Order_Details.Where(od => od.OrderID == OrderId).ToList();
+
+            return Mapper.MapToDTO(orderDetails[0]);
+
+        }
+
+        public List<OrderDetailsDTO> GetAllByOrder(int OrderId)
+        {
+            var details = _context.GetContext().Order_Details.Where(od => od.OrderID == OrderId).ToList();
+
+            return Mapper.convertToList(details);
         }
     }
 }

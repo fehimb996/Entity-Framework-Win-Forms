@@ -37,6 +37,7 @@
             this.lblCustomer = new System.Windows.Forms.Label();
             this.cmbEmployee = new System.Windows.Forms.ComboBox();
             this.lblEmployee = new System.Windows.Forms.Label();
+            this.btnPregled = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(852, 392);
+            this.dataGridView1.Size = new System.Drawing.Size(852, 354);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnPorudzbina
@@ -128,11 +129,22 @@
             this.lblEmployee.TabIndex = 14;
             this.lblEmployee.Text = "Employee";
             // 
+            // btnPregled
+            // 
+            this.btnPregled.Location = new System.Drawing.Point(304, 417);
+            this.btnPregled.Name = "btnPregled";
+            this.btnPregled.Size = new System.Drawing.Size(93, 41);
+            this.btnPregled.TabIndex = 21;
+            this.btnPregled.Text = "Pregled";
+            this.btnPregled.UseVisualStyleBackColor = true;
+            this.btnPregled.Click += new System.EventHandler(this.btnPregled_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 461);
+            this.Controls.Add(this.btnPregled);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.cmbProduct);
             this.Controls.Add(this.lblProduct);
@@ -144,6 +156,7 @@
             this.Controls.Add(this.dataGridView1);
             this.MinimumSize = new System.Drawing.Size(895, 508);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -163,6 +176,7 @@
         private System.Windows.Forms.Label lblCustomer;
         private System.Windows.Forms.ComboBox cmbEmployee;
         private System.Windows.Forms.Label lblEmployee;
+        private System.Windows.Forms.Button btnPregled;
     }
 }
 

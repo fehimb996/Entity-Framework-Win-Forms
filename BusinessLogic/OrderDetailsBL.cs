@@ -22,9 +22,24 @@ namespace BusinessLogic
             _orderDetailsDL.Insert(odDTO);
         }
 
+        public void Save(OrderDetailsDTO orderDetailsDTO)
+        {
+            _orderDetailsDL.Save(orderDetailsDTO);
+        }
+
         public void Delete(int orderID)
         {
             _orderDetailsDL.Delete(orderID);
+        }
+
+        public OrderDetailsDTO GetOrderDetail(int empId)
+        {
+            return _orderDetailsDL.GetSingleOrderDetail(empId);
+        }
+
+        public List<OrderDetailsDTO> GetAllByOrder(int OrderId)
+        {
+            return _orderDetailsDL.GetAllByOrder(OrderId);
         }
     }
 }

@@ -23,5 +23,13 @@ namespace DataLayer
                 return Mapper.convertToList(products);
             }
         }
+
+        public ProductDTO GetSingle(int productID)
+        {
+            var product = _context.GetContext().Products.Where(od => od.ProductID == productID).ToList();
+
+            return Mapper.MapToDTO(product[0]);
+
+        }
     }
 }

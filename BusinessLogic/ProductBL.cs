@@ -21,5 +21,10 @@ namespace BusinessLogic
         {
             return _productDL.GetProducts();
         }
+
+        public ProductDTO getProduct(int productId)
+        {
+            return _productDL.GetSingle(productId);
+        }
     }
 }

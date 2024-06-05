@@ -40,17 +40,25 @@ namespace DrugiKolokvijumskiZadatak
             LoadOrders();
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int orderID = (int)dataGridView1.Rows[e.RowIndex].Cells["OrderID"].Value; // Pretpostavljamo da je kolona sa ID-jem porudžbine nazvana "OrderID"
-            frmPregled frmDetalji = new frmPregled(orderID);
-            frmDetalji.ShowDialog();
-        }
-
         private void btnPorudzbina_Click(object sender, EventArgs e)
         {
             frmPorudzbina frmNovaPorudzbina = new frmPorudzbina();
             frmNovaPorudzbina.Show();
+        }
+
+        private void btnPregled_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedOrderID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["OrderID"].Value);
+
+                frmPregled frm = new frmPregled(selectedOrderID);
+                frm.Show();
+            }
+            else
+            {
+                btnPregled.Enabled = false;
+            }
         }
 
         private void cmbEmployee_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogic;
+using Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,18 @@ namespace DrugiKolokvijumskiZadatak
 {
     public partial class frmPregled : Form
     {
-        private int orderID;
+        int orderID;
+        int orderDetailID;
+        OrderBL orderBL;
+        OrderDetailsBL orderDetailsBL;
+        ProductBL productBL;
 
-        public frmPregled(int orderID)
+        public frmPregled(int orderDetailId)
         {
             InitializeComponent();
-            this.orderID = orderID;
+            orderDetailID = orderDetailId;
+            orderDetailsBL = new OrderDetailsBL();
+            productBL = new ProductBL();
         }
 
         public frmPregled()
@@ -27,7 +35,15 @@ namespace DrugiKolokvijumskiZadatak
 
         private void frmPregled_Load(object sender, EventArgs e)
         {
-            lblOrderDetails.Text = "Order details for Order: " + orderID.ToString();
+            OrderDetailsDTO orderDetail = new OrderDetailsBL().GetOrderDetail(orderDetailID);
+            ProductDTO product = new ProductBL().getProduct(orderDetail.ProductID);
+            
+            dataGridView1.DataSource = orderDetailsBL.GetAllByOrder(orderDetailID);
+        }
+
+        private void frmPregled_Shown(object sender, EventArgs e)
+        {
+            
         }
     }
 }

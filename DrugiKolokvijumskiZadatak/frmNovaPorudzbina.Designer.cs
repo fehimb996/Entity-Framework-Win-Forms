@@ -295,6 +295,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbShipper);
             this.Name = "frmPorudzbina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPorudzbina";
             this.Load += new System.EventHandler(this.frmPorudzbina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetails)).EndInit();

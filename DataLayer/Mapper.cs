@@ -81,6 +81,19 @@ namespace DataLayer
             return o;
         }
 
+        public static OrderDetailsDTO MapToDTO(Order_Detail o)
+        {
+            OrderDetailsDTO od = new OrderDetailsDTO();
+
+            od.OrderID = o.OrderID;
+            od.ProductID = o.ProductID;
+            od.UnitPrice = o.UnitPrice;
+            od.Quantity = o.Quantity;
+            od.Discount = o.Discount;
+
+            return od;
+        }
+
         public static Order_Detail MapToEntity(OrderDetailsDTO oDTP)
         {
             Order_Detail od = new Order_Detail();
@@ -178,6 +191,15 @@ namespace DataLayer
             List<EmployeeDTO> l = new List<EmployeeDTO>();
             foreach (Employee e in eList)
                 l.Add(MapToDTO(e));
+
+            return l;
+        }
+
+        public static List<OrderDetailsDTO> convertToList(List<Order_Detail> oList)
+        {
+            List<OrderDetailsDTO> l = new List<OrderDetailsDTO>();
+            foreach (Order_Detail o in oList)
+                l.Add(MapToDTO(o));
 
             return l;
         }
