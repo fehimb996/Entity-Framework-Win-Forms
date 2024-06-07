@@ -246,6 +246,8 @@
             this.Controls.Add(this.lblCustomer);
             this.Controls.Add(this.cmbEmployee);
             this.Controls.Add(this.lblEmployee);
+            this.MaximumSize = new System.Drawing.Size(774, 497);
+            this.MinimumSize = new System.Drawing.Size(774, 497);
             this.Name = "frmIzmeni";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIzmeni";

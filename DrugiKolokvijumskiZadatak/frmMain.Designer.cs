@@ -153,6 +153,7 @@
             // 
             // btnResetEmployee
             // 
+            this.btnResetEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnResetEmployee.Location = new System.Drawing.Point(426, 10);
             this.btnResetEmployee.Name = "btnResetEmployee";
             this.btnResetEmployee.Size = new System.Drawing.Size(75, 43);
@@ -163,6 +164,7 @@
             // 
             // btnResetCustomer
             // 
+            this.btnResetCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnResetCustomer.Location = new System.Drawing.Point(643, 11);
             this.btnResetCustomer.Name = "btnResetCustomer";
             this.btnResetCustomer.Size = new System.Drawing.Size(82, 42);
@@ -173,6 +175,7 @@
             // 
             // btnResetProduct
             // 
+            this.btnResetProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnResetProduct.Location = new System.Drawing.Point(878, 9);
             this.btnResetProduct.Name = "btnResetProduct";
             this.btnResetProduct.Size = new System.Drawing.Size(75, 44);

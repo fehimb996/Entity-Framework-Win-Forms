@@ -10,7 +10,7 @@ namespace DataLayer
     public class Mapper
     {
         #region Classes
-        public static EmployeeDTO MapToDTO(Employee e)
+        public static EmployeeDTO MapToDTO(Employee e) //Metod MapToDTO uzima entitet Employee i pretvara ga u EmployeeDTO. Popunjava svojstva EmployeeDTO objektima iz Employee entiteta.
         {
             EmployeeDTO emp = new EmployeeDTO();
             emp.EmployeeID = e.EmployeeID;
@@ -34,7 +34,7 @@ namespace DataLayer
             return emp;
         }
 
-        public static Employee MapToEntity(EmployeeDTO e)
+        public static Employee MapToEntity(EmployeeDTO e) //Metod MapToEntity radi suprotno. Uzima EmployeeDTO i pretvara ga u Employee entitet. Popunjava svojstva Employee objektima iz EmployeeDTO.
         {
             Employee emp = new Employee();
 
@@ -194,6 +194,15 @@ namespace DataLayer
         #endregion
 
         #region Lists
+        //Metod ConvertToList uzima listu Employee entiteta i pretvara je u listu EmployeeDTO objekata. Koristi LINQ Select metod za mapiranje svakog Employee entiteta u EmployeeDTO.
+        public static List<EmployeeDTO> convertToList(List<Employee> eList) 
+        {
+            List<EmployeeDTO> l = new List<EmployeeDTO>();
+            foreach (Employee e in eList)
+                l.Add(MapToDTO(e));
+
+            return l;
+        }
 
         public static List<OrderDTO> convertToList(List<spSearchOrders3_Result> results)
         {
@@ -213,15 +222,6 @@ namespace DataLayer
             {
                 l.Add(MapToDTO((o)));
             }
-
-            return l;
-        }
-
-        public static List<EmployeeDTO> convertToList(List<Employee> eList)
-        {
-            List<EmployeeDTO> l = new List<EmployeeDTO>();
-            foreach (Employee e in eList)
-                l.Add(MapToDTO(e));
 
             return l;
         }

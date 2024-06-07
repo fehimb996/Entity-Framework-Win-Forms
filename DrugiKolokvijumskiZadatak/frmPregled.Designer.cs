@@ -213,6 +213,8 @@
             this.Controls.Add(this.txtCustomer);
             this.Controls.Add(this.txtEmployee);
             this.Controls.Add(this.dataGridView1);
+            this.MaximumSize = new System.Drawing.Size(818, 497);
+            this.MinimumSize = new System.Drawing.Size(818, 497);
             this.Name = "frmPregled";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPregled";

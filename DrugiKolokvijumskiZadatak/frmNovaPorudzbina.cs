@@ -31,6 +31,7 @@ namespace DrugiKolokvijumskiZadatak
             employeeBL = new EmployeeBL();
             shipperBL = new ShipperBL();
             btnDodajStavku.Enabled = false;
+            btnSacuvaj.Enabled = false;
         }
 
         private void btnKreirajOrder_Click(object sender, EventArgs e)
@@ -63,10 +64,21 @@ namespace DrugiKolokvijumskiZadatak
             txtDiscount.Text = "";
             txtPrice.Text = "";
             txtQuantity.Text = "";
+
+            if (odDTOList.Count > 0)
+            {
+                btnSacuvaj.Enabled = true;
+            }
         }
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
+            if (odDTOList.Count == 0)
+            {
+                MessageBox.Show("Morate dodati barem jednu stavku pre nego što sačuvate porudžbinu.");
+                return;
+            }
+
             OrderBL oBL = new OrderBL();
             OrderDetailsBL odBL = new OrderDetailsBL();
 
@@ -90,6 +102,8 @@ namespace DrugiKolokvijumskiZadatak
                 txtDiscount.Enabled = false;
                 txtPrice.Enabled = false;
                 txtQuantity.Enabled = false;
+                btnSacuvaj.Enabled = false;
+                btnDodajStavku.Enabled = false;
 
                 MessageBox.Show("Porudzbina je uspesno sacuvana!");
             }
