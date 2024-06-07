@@ -69,6 +69,7 @@ namespace DrugiKolokvijumskiZadatak
 
             var orders = orderBL.SearchOrders(employeeID, customerID, productID);
             dataGridView1.DataSource = orders;
+            dataGridView1.Refresh();
         }
 
         private void LoadComboBoxes()
