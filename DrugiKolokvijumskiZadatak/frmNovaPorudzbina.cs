@@ -33,21 +33,6 @@ namespace DrugiKolokvijumskiZadatak
             btnDodajStavku.Enabled = false;
         }
 
-        private void cmbEmployee_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbCustomer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbShppers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnKreirajOrder_Click(object sender, EventArgs e)
         {
             oDTO.OrderDate = DateTime.Parse(lblDate.Text);
@@ -60,26 +45,6 @@ namespace DrugiKolokvijumskiZadatak
             txtDiscount.Enabled = true;
             txtPrice.Enabled = true;
             txtQuantity.Enabled = true;
-        }
-
-        private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPrice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtQuantity_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDiscount_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnDodajStavku_Click(object sender, EventArgs e)
@@ -98,11 +63,6 @@ namespace DrugiKolokvijumskiZadatak
             txtDiscount.Text = "";
             txtPrice.Text = "";
             txtQuantity.Text = "";
-        }
-
-        private void dgvOrderDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
@@ -149,9 +109,8 @@ namespace DrugiKolokvijumskiZadatak
 
         private void frmPorudzbina_Load(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             cmbEmployee.DataSource = employeeBL.GetEmployees();
-            cmbEmployee.DisplayMember = "FirstName";
+            cmbEmployee.DisplayMember = "FullName";
             cmbEmployee.ValueMember = "EmployeeID";
 
             cmbShipper.DataSource = shipperBL.GetShippers();
@@ -175,6 +134,46 @@ namespace DrugiKolokvijumskiZadatak
             txtDiscount.Enabled = false;
             txtPrice.Enabled = false;
             txtQuantity.Enabled = false;
+        }
+
+        private void cmbEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbShppers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvOrderDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDiscount_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

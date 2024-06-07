@@ -21,5 +21,10 @@ namespace BusinessLogic
         {
             return _shipperDL.GetShippers();
         }
+
+        public ShipperDTO GetShipper(int shipperId)
+        {
+            return _shipperDL.GetShipper(shipperId);
+        }
     }
 }

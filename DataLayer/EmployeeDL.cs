@@ -22,6 +22,12 @@ namespace DataLayer
             return Mapper.convertToList(employees);
         }
 
+        public EmployeeDTO GetEmployee(int employeeId)
+        {
+            var employee = _context.GetContext().Employees.Find(employeeId);
+            return Mapper.MapToDTO(employee);
+        }
+
         public void Save(EmployeeDTO eDTO)
         {
             var emp = _context.GetContext().Employees.Find(eDTO.EmployeeID);

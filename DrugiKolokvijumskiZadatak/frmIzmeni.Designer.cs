@@ -75,7 +75,7 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(203, 121);
+            this.lblPrice.Location = new System.Drawing.Point(248, 121);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(38, 16);
             this.lblPrice.TabIndex = 58;
@@ -83,21 +83,21 @@
             // 
             // txtDiscount
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(482, 141);
+            this.txtDiscount.Location = new System.Drawing.Point(505, 141);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(121, 22);
             this.txtDiscount.TabIndex = 57;
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Location = new System.Drawing.Point(343, 141);
+            this.txtQuantity.Location = new System.Drawing.Point(378, 141);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(121, 22);
             this.txtQuantity.TabIndex = 56;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(206, 141);
+            this.txtPrice.Location = new System.Drawing.Point(251, 141);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(121, 22);
             this.txtPrice.TabIndex = 55;
@@ -105,7 +105,7 @@
             // 
             // btnUpdateItem
             // 
-            this.btnUpdateItem.Location = new System.Drawing.Point(632, 131);
+            this.btnUpdateItem.Location = new System.Drawing.Point(632, 126);
             this.btnUpdateItem.Name = "btnUpdateItem";
             this.btnUpdateItem.Size = new System.Drawing.Size(109, 39);
             this.btnUpdateItem.TabIndex = 54;
@@ -116,7 +116,7 @@
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Location = new System.Drawing.Point(479, 122);
+            this.lbl.Location = new System.Drawing.Point(502, 122);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(59, 16);
             this.lbl.TabIndex = 53;
@@ -125,7 +125,7 @@
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(340, 122);
+            this.lblQuantity.Location = new System.Drawing.Point(375, 122);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(55, 16);
             this.lblQuantity.TabIndex = 52;
@@ -134,16 +134,16 @@
             // cmbProduct
             // 
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(22, 141);
+            this.cmbProduct.Location = new System.Drawing.Point(12, 141);
             this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(178, 24);
+            this.cmbProduct.Size = new System.Drawing.Size(216, 24);
             this.cmbProduct.TabIndex = 51;
             this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
             // lblProduct
             // 
             this.lblProduct.AutoSize = true;
-            this.lblProduct.Location = new System.Drawing.Point(19, 122);
+            this.lblProduct.Location = new System.Drawing.Point(12, 121);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(53, 16);
             this.lblProduct.TabIndex = 50;
@@ -152,7 +152,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(448, 47);
+            this.lblDate.Location = new System.Drawing.Point(540, 46);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(44, 16);
             this.lblDate.TabIndex = 49;
@@ -161,7 +161,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(448, 20);
+            this.label3.Location = new System.Drawing.Point(540, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 48;
@@ -170,16 +170,16 @@
             // cmbShipper
             // 
             this.cmbShipper.FormattingEnabled = true;
-            this.cmbShipper.Location = new System.Drawing.Point(297, 38);
+            this.cmbShipper.Location = new System.Drawing.Point(382, 39);
             this.cmbShipper.Name = "cmbShipper";
-            this.cmbShipper.Size = new System.Drawing.Size(121, 24);
+            this.cmbShipper.Size = new System.Drawing.Size(138, 24);
             this.cmbShipper.TabIndex = 47;
             this.cmbShipper.SelectedIndexChanged += new System.EventHandler(this.cmbShipper_SelectedIndexChanged);
             // 
             // lblShipper
             // 
             this.lblShipper.AutoSize = true;
-            this.lblShipper.Location = new System.Drawing.Point(294, 19);
+            this.lblShipper.Location = new System.Drawing.Point(379, 20);
             this.lblShipper.Name = "lblShipper";
             this.lblShipper.Size = new System.Drawing.Size(54, 16);
             this.lblShipper.TabIndex = 46;
@@ -188,16 +188,16 @@
             // cmbCustomer
             // 
             this.cmbCustomer.FormattingEnabled = true;
-            this.cmbCustomer.Location = new System.Drawing.Point(160, 38);
+            this.cmbCustomer.Location = new System.Drawing.Point(190, 38);
             this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(121, 24);
+            this.cmbCustomer.Size = new System.Drawing.Size(158, 24);
             this.cmbCustomer.TabIndex = 45;
             this.cmbCustomer.SelectedIndexChanged += new System.EventHandler(this.cmbCustomer_SelectedIndexChanged);
             // 
             // lblCustomer
             // 
             this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Location = new System.Drawing.Point(157, 19);
+            this.lblCustomer.Location = new System.Drawing.Point(187, 19);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(64, 16);
             this.lblCustomer.TabIndex = 44;
@@ -206,16 +206,16 @@
             // cmbEmployee
             // 
             this.cmbEmployee.FormattingEnabled = true;
-            this.cmbEmployee.Location = new System.Drawing.Point(22, 39);
+            this.cmbEmployee.Location = new System.Drawing.Point(12, 39);
             this.cmbEmployee.Name = "cmbEmployee";
-            this.cmbEmployee.Size = new System.Drawing.Size(121, 24);
+            this.cmbEmployee.Size = new System.Drawing.Size(146, 24);
             this.cmbEmployee.TabIndex = 43;
             this.cmbEmployee.SelectedIndexChanged += new System.EventHandler(this.cmbEmployee_SelectedIndexChanged);
             // 
             // lblEmployee
             // 
             this.lblEmployee.AutoSize = true;
-            this.lblEmployee.Location = new System.Drawing.Point(19, 20);
+            this.lblEmployee.Location = new System.Drawing.Point(9, 20);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(69, 16);
             this.lblEmployee.TabIndex = 42;

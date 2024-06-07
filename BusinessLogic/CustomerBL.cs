@@ -22,6 +22,11 @@ namespace BusinessLogic
             return _customerDL.GetCustomers();
         }
 
+        public CustomerDTO GetCustomer(string customerId)
+        {
+            return _customerDL.GetCustomer(customerId);
+        }
+
         public List<CustomerDTO> SearchCustomers(string searchTerm)
         {
             return _customerDL.SearchCustomers(searchTerm);

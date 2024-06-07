@@ -38,6 +38,9 @@
             this.cmbEmployee = new System.Windows.Forms.ComboBox();
             this.lblEmployee = new System.Windows.Forms.Label();
             this.btnIzmeni = new System.Windows.Forms.Button();
+            this.btnResetEmployee = new System.Windows.Forms.Button();
+            this.btnResetCustomer = new System.Windows.Forms.Button();
+            this.btnResetProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +55,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(852, 392);
+            this.dataGridView1.Size = new System.Drawing.Size(1031, 392);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -68,18 +71,20 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(791, 12);
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.Location = new System.Drawing.Point(969, 12);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 39);
             this.btnReset.TabIndex = 20;
-            this.btnReset.Text = "Reset";
+            this.btnReset.Text = "Reset all";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // cmbProduct
             // 
+            this.cmbProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(653, 27);
+            this.cmbProduct.Location = new System.Drawing.Point(751, 24);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(121, 24);
             this.cmbProduct.TabIndex = 19;
@@ -87,8 +92,9 @@
             // 
             // lblProduct
             // 
+            this.lblProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProduct.AutoSize = true;
-            this.lblProduct.Location = new System.Drawing.Point(650, 8);
+            this.lblProduct.Location = new System.Drawing.Point(748, 5);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(53, 16);
             this.lblProduct.TabIndex = 18;
@@ -96,8 +102,9 @@
             // 
             // cmbCustomer
             // 
+            this.cmbCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbCustomer.FormattingEnabled = true;
-            this.cmbCustomer.Location = new System.Drawing.Point(517, 27);
+            this.cmbCustomer.Location = new System.Drawing.Point(516, 24);
             this.cmbCustomer.Name = "cmbCustomer";
             this.cmbCustomer.Size = new System.Drawing.Size(121, 24);
             this.cmbCustomer.TabIndex = 17;
@@ -105,8 +112,9 @@
             // 
             // lblCustomer
             // 
+            this.lblCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCustomer.AutoSize = true;
-            this.lblCustomer.Location = new System.Drawing.Point(514, 8);
+            this.lblCustomer.Location = new System.Drawing.Point(513, 5);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(64, 16);
             this.lblCustomer.TabIndex = 16;
@@ -114,17 +122,19 @@
             // 
             // cmbEmployee
             // 
+            this.cmbEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbEmployee.FormattingEnabled = true;
-            this.cmbEmployee.Location = new System.Drawing.Point(379, 27);
+            this.cmbEmployee.Location = new System.Drawing.Point(293, 25);
             this.cmbEmployee.Name = "cmbEmployee";
-            this.cmbEmployee.Size = new System.Drawing.Size(121, 24);
+            this.cmbEmployee.Size = new System.Drawing.Size(127, 24);
             this.cmbEmployee.TabIndex = 15;
             this.cmbEmployee.SelectedIndexChanged += new System.EventHandler(this.cmbEmployee_SelectedIndexChanged);
             // 
             // lblEmployee
             // 
+            this.lblEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmployee.AutoSize = true;
-            this.lblEmployee.Location = new System.Drawing.Point(376, 8);
+            this.lblEmployee.Location = new System.Drawing.Point(290, 6);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(69, 16);
             this.lblEmployee.TabIndex = 14;
@@ -140,11 +150,44 @@
             this.btnIzmeni.UseVisualStyleBackColor = true;
             this.btnIzmeni.Click += new System.EventHandler(this.btnIzmeni_Click);
             // 
+            // btnResetEmployee
+            // 
+            this.btnResetEmployee.Location = new System.Drawing.Point(426, 10);
+            this.btnResetEmployee.Name = "btnResetEmployee";
+            this.btnResetEmployee.Size = new System.Drawing.Size(75, 43);
+            this.btnResetEmployee.TabIndex = 22;
+            this.btnResetEmployee.Text = "Reset employee";
+            this.btnResetEmployee.UseVisualStyleBackColor = true;
+            this.btnResetEmployee.Click += new System.EventHandler(this.btnResetEmployee_Click);
+            // 
+            // btnResetCustomer
+            // 
+            this.btnResetCustomer.Location = new System.Drawing.Point(643, 11);
+            this.btnResetCustomer.Name = "btnResetCustomer";
+            this.btnResetCustomer.Size = new System.Drawing.Size(82, 42);
+            this.btnResetCustomer.TabIndex = 23;
+            this.btnResetCustomer.Text = "Reset customer";
+            this.btnResetCustomer.UseVisualStyleBackColor = true;
+            this.btnResetCustomer.Click += new System.EventHandler(this.btnResetCustomer_Click);
+            // 
+            // btnResetProduct
+            // 
+            this.btnResetProduct.Location = new System.Drawing.Point(878, 9);
+            this.btnResetProduct.Name = "btnResetProduct";
+            this.btnResetProduct.Size = new System.Drawing.Size(75, 44);
+            this.btnResetProduct.TabIndex = 24;
+            this.btnResetProduct.Text = "Reset product";
+            this.btnResetProduct.UseVisualStyleBackColor = true;
+            this.btnResetProduct.Click += new System.EventHandler(this.btnResetProduct_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 461);
+            this.ClientSize = new System.Drawing.Size(1056, 461);
+            this.Controls.Add(this.btnResetProduct);
+            this.Controls.Add(this.btnResetCustomer);
+            this.Controls.Add(this.btnResetEmployee);
             this.Controls.Add(this.btnIzmeni);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.cmbProduct);
@@ -155,7 +198,7 @@
             this.Controls.Add(this.lblEmployee);
             this.Controls.Add(this.btnPorudzbina);
             this.Controls.Add(this.dataGridView1);
-            this.MinimumSize = new System.Drawing.Size(895, 508);
+            this.MinimumSize = new System.Drawing.Size(1074, 508);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -178,6 +221,9 @@
         private System.Windows.Forms.ComboBox cmbEmployee;
         private System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Button btnIzmeni;
+        private System.Windows.Forms.Button btnResetEmployee;
+        private System.Windows.Forms.Button btnResetCustomer;
+        private System.Windows.Forms.Button btnResetProduct;
     }
 }
 

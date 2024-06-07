@@ -23,5 +23,11 @@ namespace DataLayer
                 return Mapper.convertToList(shippers);
             }
         }
+
+        public ShipperDTO GetShipper(int shipperId)
+        {
+            var shipper = _context.GetContext().Shippers.Find(shipperId);
+            return Mapper.MapToDTO(shipper);
+        }
     }
 }

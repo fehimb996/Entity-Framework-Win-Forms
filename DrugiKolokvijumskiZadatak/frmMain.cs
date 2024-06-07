@@ -74,7 +74,7 @@ namespace DrugiKolokvijumskiZadatak
         private void LoadComboBoxes()
         {
             cmbEmployee.DataSource = employeeBL.GetEmployees();
-            cmbEmployee.DisplayMember = "FirstName";
+            cmbEmployee.DisplayMember = "FullName";
             cmbEmployee.ValueMember = "EmployeeID";
             cmbEmployee.SelectedIndex = -1;
 
@@ -133,6 +133,24 @@ namespace DrugiKolokvijumskiZadatak
                 frmIzmeni frm = new frmIzmeni(selectedOrderID);
                 frm.Show();
             }
+        }
+
+        private void btnResetEmployee_Click(object sender, EventArgs e)
+        {
+            cmbEmployee.SelectedIndex = -1;
+            SearchOrders();
+        }
+
+        private void btnResetCustomer_Click(object sender, EventArgs e)
+        {
+            cmbCustomer.SelectedIndex = -1;
+            SearchOrders();
+        }
+
+        private void btnResetProduct_Click(object sender, EventArgs e)
+        {
+            cmbProduct.SelectedIndex = -1;
+            SearchOrders();
         }
     }
 }

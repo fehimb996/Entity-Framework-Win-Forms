@@ -99,11 +99,11 @@
             // dgvOrderDetails
             // 
             this.dgvOrderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetails.Location = new System.Drawing.Point(33, 218);
+            this.dgvOrderDetails.Location = new System.Drawing.Point(13, 218);
             this.dgvOrderDetails.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrderDetails.Name = "dgvOrderDetails";
             this.dgvOrderDetails.RowHeadersWidth = 51;
-            this.dgvOrderDetails.Size = new System.Drawing.Size(735, 213);
+            this.dgvOrderDetails.Size = new System.Drawing.Size(774, 213);
             this.dgvOrderDetails.TabIndex = 37;
             this.dgvOrderDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetails_CellContentClick);
             // 
@@ -294,6 +294,8 @@
             this.Controls.Add(this.cmbEmployee);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbShipper);
+            this.MaximumSize = new System.Drawing.Size(818, 539);
+            this.MinimumSize = new System.Drawing.Size(818, 539);
             this.Name = "frmPorudzbina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPorudzbina";

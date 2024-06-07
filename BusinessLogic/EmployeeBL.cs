@@ -22,6 +22,11 @@ namespace BusinessLogic
             return _employeeDL.GetEmployees();
         }
 
+        public EmployeeDTO GetEmployee(int employeeId)
+        {
+            return _employeeDL.GetEmployee(employeeId);
+        }
+
         public void Save(EmployeeDTO eDTO)
         {
             _employeeDL.Save(eDTO);

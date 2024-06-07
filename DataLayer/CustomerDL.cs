@@ -25,6 +25,12 @@ namespace DataLayer
             }
         }
 
+        public CustomerDTO GetCustomer(string customerId)
+        {
+            var customer = _context.GetContext().Customers.Find(customerId);
+            return Mapper.MapToDTO(customer);
+        }
+
         public List<CustomerDTO> SearchCustomers(string searchTerm)
         {
             {
