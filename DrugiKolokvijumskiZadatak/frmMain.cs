@@ -120,18 +120,18 @@ namespace DrugiKolokvijumskiZadatak
             {
                 int selectedOrderID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
 
-                frmPregled frm = new frmPregled(selectedOrderID);
+                frmIzmeni frm = new frmIzmeni(selectedOrderID);
                 frm.Show();
             }
         }
 
-        private void btnIzmeni_Click(object sender, EventArgs e)
+        private void btnPregled_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 int selectedOrderID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
 
-                frmIzmeni frm = new frmIzmeni(selectedOrderID);
+                frmPregled frm = new frmPregled(selectedOrderID);
                 frm.Show();
             }
         }
